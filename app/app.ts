@@ -2,16 +2,18 @@ import { Component } from '@angular/core';
 import { Platform, ionicBootstrap } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { TabsPage } from './pages/tabs/tabs';
-
+import { ChatService } from './services/chat';
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+  template: '<ion-nav [root]="rootPage"></ion-nav>',
+  providers: [ChatService]
 })
 export class MyApp {
 
   public rootPage: any;
 
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, private chat: ChatService) {
+
     this.rootPage = TabsPage;
 
     platform.ready().then(() => {

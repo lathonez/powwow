@@ -30,3 +30,6 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+
+# ^^ those are ionic, below are mine
+typings
