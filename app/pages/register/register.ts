@@ -7,7 +7,6 @@ import { UtilsService } from '../../services/utils';
 })
 export class RegisterPage {
 
-  loadingSpinner;
   username: string;
   password: string;
   passwordConfirm: string;
