@@ -32,32 +32,52 @@ export class ChatService {
   init() {
   }
 
-  login(username, password, callback) {
+  quickBloxWrapper(func, options): Promise<any> {
 
-    let cb = function(error, result) {
+    let self = this;
 
-      if (error) {
-        return callback(error);
-      }
+    return new Promise(function(resolve, reject) {
 
-      this.connect(result.user_id, password, cb);
-    };
+      let cb = function(error, result) {
+        if (error) {
+          return reject(error);
+        } else {
+          return resolve(result);
+        }
+      };
 
-    this.QB.createSession({login: username, password: password}, cb);
+      self.QB[func](options, cb);
+    });
   }
 
-  connect(userId, password, callback) {
+  login(username, password) {
+    return this.quickBloxWrapper('createSession', {login: username, password: password})
+      .then((result) => this.quickBloxWrapper('connect', {userId: result.userId, password: password }))
+      .catch(this.errorHandler);
+  }
 
-    let cb = function(error, result) {
+  errorHandler(error) {
 
-      if (error) {
-        return callback(error);
+    let message;
+
+    switch (error.code) {
+      case 0:
+        message = 'No internet connection';
+        break;
+      case 401:
+        message = 'Invalid username / password';
+        break;
+      default:
+        message = `There was an error logging in CODE: ${error.code} - ${error.message}`;
+    }
+
+    return Promise.resolve(
+      {
+        error: {
+          raw: error,
+          message: message
+        }
       }
-
-      console.log(result);
-      callback(null, result);
-    };
-
-    this.QB.chat.connect({userId: userId, password: password}, cb);
+    );
   }
 }
