@@ -32,7 +32,7 @@ export class ChatService {
   init() {
   }
 
-  quickBloxWrapper(func, options): Promise<any> {
+  quickBloxWrapper(api, func, options?): Promise<any> {
 
     let self = this;
 
@@ -46,13 +46,37 @@ export class ChatService {
         }
       };
 
-      self.QB[func](options, cb);
+      if (api === 'main') {
+        self.QB[func](options, cb);
+      } else {
+        self.QB[api][func](options, cb);
+      }
     });
   }
 
   login(username, password) {
-    return this.quickBloxWrapper('createSession', {login: username, password: password})
-      .then((result) => this.quickBloxWrapper('connect', {userId: result.userId, password: password }))
+    return this.quickBloxWrapper('main', 'createSession', {login: username, password: password})
+      .then((result) => this.quickBloxWrapper('chat', 'connect', {userId: result.user_id, password: password}))
+      .catch(this.errorHandler);
+  }
+
+  register(username, password, name, email) {
+
+    // create registration options for our mandatory params
+    let options: any = {
+      login: username,
+      password: password,
+      full_name: name
+    };
+
+    // add email if provided
+    if (email) {
+      options.email = email;
+    }
+
+    // to create the session (we've no user yet), we just pass the username
+    return this.quickBloxWrapper('main', 'createSession', {login: username})
+      .then(((result) => this.quickBloxWrapper('users', 'create', options)))
       .catch(this.errorHandler);
   }
 
@@ -65,10 +89,13 @@ export class ChatService {
         message = 'No internet connection';
         break;
       case 401:
-        message = 'Invalid username / password';
+        message = 'Failed to authenticate';
+        break;
+      case 422:
+        message = require('prettyjson').renderString(error.detail);
         break;
       default:
-        message = `There was an error logging in CODE: ${error.code} - ${error.message}`;
+        message = `An error has occurred: ${error.code} - ${error.message}`;
     }
 
     return Promise.resolve(
