@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ChatService } from '../../services/chat';
 import { UtilsService } from '../../services/utils';
+import { ContactsPage } from '../contacts/contacts';
 import { RegisterPage } from '../register/register';
 
 @Component({
@@ -22,7 +23,7 @@ export class LoginPage {
 
   login() {
 
-    let loginResult = null;
+    let loginResult: any = {};
 
     // show the loading spinner as we might have to wait a while to login
     this.utils.showLoadingSpinner('Logging in...');
@@ -43,6 +44,7 @@ export class LoginPage {
           // =[ login failed!
           this.utils.alerter('Login Failure!', loginResult.error.message, 'OK');
         } else {
+          this.nav.push(ContactsPage);
           // successful login, yay!
           console.log('login successful');
         }

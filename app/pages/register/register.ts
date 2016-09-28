@@ -24,7 +24,7 @@ export class RegisterPage {
 
   register() {
 
-    let registerResult;
+    let registerResult: any = {};
 
     if (this.password !== this.passwordConfirm) {
       this.utils.alerter('Password mismatch!', 'The two passwords you have supplied do not match', 'OK');

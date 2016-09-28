@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Chat with {{user.login}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="chat">
+  <ion-scroll scrollY="true" class="convo">{{conversation}}</ion-scroll>
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="line" placeholder="Say something to {{user.login}}" name="line" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button block (click)="sendMessage()"><ion-icon name="send"></ion-icon>Send</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
