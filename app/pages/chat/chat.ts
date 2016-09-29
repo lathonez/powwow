@@ -19,6 +19,9 @@ export class ChatPage {
   // the conversation made up of many lines
   conversation: Array<string> = [];
 
+  // message subscription so we can unsubscribe later
+  messageSubscription;
+
   constructor(public nav: NavController, public chat: ChatService, public navParams: NavParams) {
     self = this;
 
@@ -26,7 +29,11 @@ export class ChatPage {
     self.user = navParams.data.user;
 
     // make sure we get incoming chat notifications
-    self.chat.messageEmitter.subscribe(self.receiveMessage);
+    self.messageSubscription = self.chat.messageEmitter.subscribe(self.receiveMessage);
+  }
+
+  ionViewDidLeave() {
+    self.messageSubscription.unsubscribe();
   }
 
   receiveMessage(data) {
@@ -41,6 +48,11 @@ export class ChatPage {
   }
 
   sendMessage() {
+
+    // don't send if we've nothing to send!
+    if (!self.line) {
+      return;
+    }
 
     // our message is whatever is contained in the line input
     let message = self.line;

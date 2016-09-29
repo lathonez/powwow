@@ -33,3 +33,4 @@ UserInterfaceState.xcuserstate
 
 # ^^ those are ionic, below are mine
 typings
+.io-config.json
