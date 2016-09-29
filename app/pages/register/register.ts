@@ -52,8 +52,7 @@ export class RegisterPage {
           // =[ login failed!
           this.utils.alerter('Registration Failure!', registerResult.error.message, 'OK');
         } else {
-          // successful register, yay! - lets go back to login
-          // TODO - should automatically create a session on successful login and switch to appropriate page
+          // successful register, yay! - lets go back to login so the user can login
           this.nav.pop();
         }
       });

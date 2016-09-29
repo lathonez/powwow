@@ -5,7 +5,9 @@
 </ion-header>
 
 <ion-content padding class="chat">
-  <ion-scroll scrollY="true" class="convo">{{conversation}}</ion-scroll>
+  <ion-scroll scrollY="true" class="convo">
+  <p *ngFor="let line of conversation">{{line}}</p>
+  </ion-scroll>
   <ion-list>
     <ion-item>
       <ion-input [(ngModel)]="line" placeholder="Say something to {{user.login}}" name="line" type="text"></ion-input>

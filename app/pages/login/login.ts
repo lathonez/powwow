@@ -52,6 +52,7 @@ export class LoginPage {
   }
 
   register() {
+    // switch to the register page
     this.nav.push(RegisterPage);
   }
 }

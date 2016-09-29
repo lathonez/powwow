@@ -7,10 +7,12 @@ import { ChatPage } from '..//chat/chat';
   templateUrl: 'build/pages/contacts/contacts.html'
 })
 export class ContactsPage {
-  constructor(public nav: NavController, public chat: ChatService) {
-  }
+
+  // we use the ChatService in the html to show all users
+  constructor(public nav: NavController, public chat: ChatService) {}
 
   startChat(user) {
+    // open the chat page for the user we've clicked on
     this.nav.push(ChatPage, {user: user});
   }
 }
