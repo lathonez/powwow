@@ -4,27 +4,4 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <form (submit)="login()">
-      <ion-item>
-        <ion-label floating>Username</ion-label>
-        <ion-input [(ngModel)]="username" name="username" type="text" required></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-row>
-          <!-- invoke our register function explicitly when this button is clicked -->
-          <ion-col><button ion-button block icon-left type="button" (click)="register()"><ion-icon name="add-circle"></ion-icon>Register</button></ion-col>
-          <!-- button type of submit will submit the form -->
-          <ion-col><button ion-button block icon-left><ion-icon name="log-in"></ion-icon>Login</button></ion-col>
-        </ion-row>
-      </ion-item>
-    </form>
-  </ion-list>
-</ion-content>
+<ion-content>There's nothing here!</ion-content>
