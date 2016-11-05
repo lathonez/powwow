@@ -47,8 +47,6 @@ export class ChatService {
       // pass this callback through to the quickBlox function
       let cb = function(error, result) {
 
-        console.log('ERROR' + error);
-        console.log('RESULT ' + result);
         if (error) {
           // reject the promise (causing an error), if we recieve an error
           return reject(error);
@@ -85,6 +83,7 @@ export class ChatService {
       // set our users array to the returned users from the server
       .then((users) => {
         self.users = users.items.map((item) => item.user);
+        return ret;
       });
   }
 
