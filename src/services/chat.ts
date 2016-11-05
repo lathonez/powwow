@@ -70,6 +70,15 @@ export class ChatService {
     });
   }
 
+
+  login(username, password) {
+
+    // first we need to create a session with quickBlox for this user (first step auth)
+    return self.quickBloxWrapper('main', 'createSession', {login: username, password: password})
+      // catch any errors and format them nicely for the user
+      .catch(self.errorHandler);
+  }
+
   errorHandler(error) {
     // helper function to format error messages received from the server nicely for the user
     let message;

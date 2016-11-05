@@ -15,4 +15,24 @@ export class UtilsService {
   ) {
     this.nav = app.getActiveNav();
   }
+
+  showLoadingSpinner(message) {
+    this.loadingSpinner = this.loading.create({
+      content: message
+    });
+    return this.loadingSpinner.present();
+  }
+
+  hideLoadingSpinner() {
+    return this.loadingSpinner.dismiss();
+  }
+
+  alerter(title, message, buttonText) {
+    let alert = this.alert.create({
+      title: title,
+      subTitle: message,
+      buttons: [buttonText]
+    });
+    alert.present();
+  }
 }

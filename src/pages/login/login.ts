@@ -20,9 +20,31 @@ export class LoginPage {
   ) {}
 
   login() {
-    console.log('LOGIN');
-    console.log('USERNAME: ' + this.username);
-    console.log('PASSWORD: ' + this.password);
+
+    let loginResult: any = {};
+
+    // show the loading spinner as we might have to wait a while to login
+    this.utils.showLoadingSpinner('Logging in...');
+
+    this.chat.login(this.username, this.password)
+
+      // store the result from login so we can access it later
+      .then((result) => loginResult = result)
+
+      // hide our loading spinner as we can no hand back to the user
+      .then(() => this.utils.hideLoadingSpinner())
+
+      // process the result
+      .then(() => {
+        if (loginResult.error) {
+          // =[ login failed!
+          this.utils.alerter('Login Failure!', loginResult.error.message, 'OK');
+        } else {
+          this.nav.push(ContactsPage);
+          // successful login, yay!
+          console.log('login successful');
+        }
+      });
   }
 
   register() {
