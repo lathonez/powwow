@@ -102,7 +102,7 @@
 
 * add login functions:
 
-**pages/login/login.hts**:
+**pages/login/login.ts**:
 
 ```javascript
 export class LoginPage {
@@ -110,7 +110,7 @@ export class LoginPage {
   username: string;
   password: string;
 
-  \\ ...
+  ...
 
   login() {
     console.log('LOGIN');
