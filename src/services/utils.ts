@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { AlertController, LoadingController, NavController } from 'ionic-angular';
+import { AlertController, App, LoadingController, NavController } from 'ionic-angular';
 
 @Injectable()
 
 export class UtilsService {
 
+  nav: NavController;
   loadingSpinner;
 
   constructor(
-    public nav: NavController,
+    public app: App,
     public alert: AlertController,
     public loading: LoadingController    // qb initialiser - does nothing with network
   ) {
+    this.nav = app.getActiveNav();
     // nothing here yet
   }
 

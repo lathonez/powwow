@@ -4,7 +4,7 @@ import { ChatService } from '../../services/chat';
 import { UtilsService } from '../../services/utils';
 
 @Component({
-  templateUrl: 'build/pages/register/register.html'
+  templateUrl: 'register.html'
 })
 export class RegisterPage {
 

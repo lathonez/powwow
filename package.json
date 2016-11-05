@@ -1,37 +1,44 @@
 {
+  "name": "powwow",
+  "author": "Stephen Hazleton",
+  "homepage": "https://github.com/lathonez/powwow",
+  "private": true,
+  "scripts": {
+    "build": "ionic-app-scripts build",
+    "watch": "ionic-app-scripts watch",
+    "serve:before": "watch",
+    "emulate:before": "build",
+    "deploy:before": "build",
+    "build:before": "build",
+    "run:before": "build"
+  },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "es6-shim": "0.35.1",
-    "ionic-angular": "2.0.0-beta.11",
-    "ionic-native": "1.3.10",
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/compiler-cli": "0.6.2",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/platform-server": "2.0.0",
+    "@ionic/storage": "1.1.6",
+    "ionic-angular": "2.0.0-rc.1",
+    "ionic-native": "2.2.3",
     "ionicons": "3.0.0",
     "prettyjson": "1.1.3",
-    "quickblox": "2.2.2",
-    "reflect-metadata": "0.1.8",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "0.6.12"
+    "quickblox": "2.3.4",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "0.6.21"
   },
   "devDependencies": {
-    "del": "2.2.0",
-    "gulp": "3.9.1",
-    "gulp-watch": "4.3.5",
-    "ionic-gulp-browserify-typescript": "2.0.0",
-    "ionic-gulp-fonts-copy": "1.0.0",
-    "ionic-gulp-html-copy": "1.0.0",
-    "ionic-gulp-sass-build": "1.0.0",
-    "ionic-gulp-scripts-copy": "2.0.0",
-    "ionic-gulp-tslint": "1.0.0",
-    "run-sequence": "1.1.5",
-    "tslint-ionic-rules": "0.0.4",
-    "typings": "1.4.0"
+    "@ionic/app-scripts": "0.0.38",
+    "angular-cli": "^1.0.0-beta.19-3",
+    "jasmine-spec-reporter": "^2.7.0",
+    "protractor": "^4.0.10",
+    "ts-node": "^1.6.1",
+    "typescript": "2.0.6"
   },
-  "name": "powwow",
   "description": "powwow: An Ionic project",
   "cordovaPlugins": [
     "cordova-plugin-device",
@@ -41,8 +48,5 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [],
-  "scripts": {
-    "postinstall": "ionic state restore && typings install"
-  }
+  "cordovaPlatforms": []
 }

@@ -4,7 +4,7 @@ import { ChatService } from '../../services/chat';
 import { ChatPage } from '..//chat/chat';
 
 @Component({
-  templateUrl: 'build/pages/contacts/contacts.html'
+  templateUrl: 'contacts.html'
 })
 export class ContactsPage {
 

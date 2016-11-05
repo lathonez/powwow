@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { App, NavController, NavParams } from 'ionic-angular';
 import { ChatService } from '../../services/chat';
 
 let self: ChatPage;
 
 @Component({
-  templateUrl: 'build/pages/chat/chat.html'
+  templateUrl: 'chat.html'
 })
 
 export class ChatPage {
+
+  nav: NavController;
 
   // who we're chatting to
   user = null;
@@ -22,9 +24,10 @@ export class ChatPage {
   // message subscription so we can unsubscribe later
   messageSubscription;
 
-  constructor(public nav: NavController, public chat: ChatService, public navParams: NavParams) {
+  constructor(app: App, public chat: ChatService, public navParams: NavParams) {
     self = this;
 
+    self.nav = app.getActiveNav();
     // the user that we're chatting to is passed through in the NavParams, store it
     self.user = navParams.data.user;
 

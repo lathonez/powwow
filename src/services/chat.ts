@@ -34,9 +34,9 @@ export class ChatService {
   messageEmitter: EventEmitter<{}> = new EventEmitter();
 
   constructor() {
-    // qb initialiser - does nothing with network
-    this.QB.init(this.auth.id, this.auth.key, this.auth.secret, this.config);
     self = this;
+    // qb initialiser - does nothing with network
+    self.QB.init(self.auth.id, self.auth.key, self.auth.secret, self.config);
   }
 
   quickBloxWrapper(api, func, options): Promise<any> {
@@ -47,6 +47,8 @@ export class ChatService {
       // pass this callback through to the quickBlox function
       let cb = function(error, result) {
 
+        console.log('ERROR' + error);
+        console.log('RESULT ' + result);
         if (error) {
           // reject the promise (causing an error), if we recieve an error
           return reject(error);
@@ -81,7 +83,9 @@ export class ChatService {
     return self.quickBloxWrapper('users', 'get', [{per_page: 100}])
 
       // set our users array to the returned users from the server
-      .then((users) => self.users = users.items.map((item) => item.user));
+      .then((users) => {
+        self.users = users.items.map((item) => item.user);
+      });
   }
 
   connect(session, password) {

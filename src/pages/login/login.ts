@@ -6,7 +6,7 @@ import { ContactsPage } from '../contacts/contacts';
 import { RegisterPage } from '../register/register';
 
 @Component({
-  templateUrl: 'build/pages/login/login.html'
+  templateUrl: 'login.html'
 })
 export class LoginPage {
 
@@ -18,7 +18,7 @@ export class LoginPage {
     public chat: ChatService,
     public utils: UtilsService
   ) {
-    window['login'] = this;
+
   }
 
   login() {
@@ -39,7 +39,6 @@ export class LoginPage {
 
       // process the result
       .then(() => {
-
         if (loginResult.error) {
           // =[ login failed!
           this.utils.alerter('Login Failure!', loginResult.error.message, 'OK');
