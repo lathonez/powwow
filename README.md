@@ -68,8 +68,8 @@ ionic 2 chat app
 
 ## Modify login page
 
-* add [form](https://github.com/lathonez/powwow-lessons/blob/d1dc54c825bc97cbe65532492c95a21d44288ebb/app/pages/login/login.html#L17-L38) to `login.html`
-* add [`username`, `password` and `login` / `register`](https://github.com/lathonez/powwow-lessons/blob/d1dc54c825bc97cbe65532492c95a21d44288ebb/app/pages/login/login.ts#L15-L30) functions - just with log lines to `login.ts`
+* add [form](https://github.com/lathonez/powwow/blob/lesson-two/src/pages/login/login.html#L7-L39) to `login.html`
+* add [`username`, `password` and `login` / `register`](https://github.com/lathonez/powwow/blob/lesson-two/src/pages/login/login.ts#L22-L30) functions - just with log lines to `login.ts`
 
 # Lesson Two
 
