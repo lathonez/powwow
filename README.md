@@ -82,7 +82,8 @@ ionic 2 chat app
 
 * create a basic login function in ChatService, and join the dots to test:
 
-*services/chat.ts*:
+**services/chat.ts**:
+
 ```javascript
   login(username, password) {
 
@@ -91,7 +92,7 @@ ionic 2 chat app
   }
 ```
 
-*pages/login/login.ts*:
+**pages/login/login.ts**:
 
 ```javascript
   login() {
@@ -104,10 +105,11 @@ ionic 2 chat app
       .then((result) => loginResult = result)
       .then(() => console.log(result))
 }
+```
 
 * add `alerter` and `loadingSpinner` to utils service, plumb loading spinner into login
 
-*services/utils.ts*:
+**services/utils.ts**:
 
 ```javascript:
   showLoadingSpinner(message) {
@@ -131,7 +133,7 @@ ionic 2 chat app
   }
 ```
 
-*pages/login/login.ts*:
+**pages/login/login.ts**:
 
 ```javascript:
 	let loginResult: any = {};
@@ -150,7 +152,7 @@ ionic 2 chat app
 
 * process login result
 
-*services/chat.ts*:
+**services/chat.ts**:
 
 ```javascript:
     // first we need to create a session with quickBlox for this user (first step auth)
@@ -159,7 +161,7 @@ ionic 2 chat app
       .catch(self.errorHandler);
 ```
 
-*pages/login/login.ts*:
+**pages/login/login.ts**:
 
 ```javascript:
       // hide our loading spinner as we can no hand back to the user
