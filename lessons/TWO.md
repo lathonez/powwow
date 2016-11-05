@@ -1,7 +1,7 @@
 ## Lesson Objectives
 
 * [Working Login](#working-login)
-* [Diff](https://github.com/lathonez/powwow-lessons/compare/lesson-two...lesson-three)
+* [Diff](https://github.com/lathonez/powwow/compare/lesson-two...lesson-three)
 
 ## Working Login
 
