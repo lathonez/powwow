@@ -111,7 +111,7 @@ ionic 2 chat app
 
 **services/utils.ts**:
 
-```javascript:
+```javascript
   showLoadingSpinner(message) {
     this.loadingSpinner = this.loading.create({
       content: message
@@ -135,7 +135,7 @@ ionic 2 chat app
 
 **pages/login/login.ts**:
 
-```javascript:
+```javascript
 	let loginResult: any = {};
 
     // show the loading spinner as we might have to wait a while to login
@@ -154,7 +154,7 @@ ionic 2 chat app
 
 **services/chat.ts**:
 
-```javascript:
+```javascript
     // first we need to create a session with quickBlox for this user (first step auth)
     return self.quickBloxWrapper('main', 'createSession', {login: username, password: password})
       // catch any errors and format them nicely for the user
@@ -163,7 +163,7 @@ ionic 2 chat app
 
 **pages/login/login.ts**:
 
-```javascript:
+```javascript
       // hide our loading spinner as we can no hand back to the user
       .then(() => this.utils.hideLoadingSpinner())
 
