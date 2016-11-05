@@ -10,11 +10,22 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
 
+  username: string;
+  password: string;
+
   constructor(
     public nav: NavController,
     public chat: ChatService,
     public utils: UtilsService
-  ) {
+  ) {}
 
+  login() {
+    console.log('LOGIN');
+    console.log('USERNAME: ' + this.username);
+    console.log('PASSWORD: ' + this.password);
+  }
+
+  register() {
+    console.log('REGISTER');
   }
 }

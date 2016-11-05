@@ -70,3 +70,20 @@ ionic 2 chat app
 
 * add [form](https://github.com/lathonez/powwow-lessons/blob/d1dc54c825bc97cbe65532492c95a21d44288ebb/app/pages/login/login.html#L17-L38) to `login.html`
 * add [`username`, `password` and `login` / `register`](https://github.com/lathonez/powwow-lessons/blob/d1dc54c825bc97cbe65532492c95a21d44288ebb/app/pages/login/login.ts#L15-L30) functions - just with log lines to `login.ts`
+
+# Lesson Two
+
+## Lesson Objectives
+
+* [Working Login](#working-login)
+* [Diff](https://github.com/lathonez/powwow-lessons/compare/v1.0...v2.0)
+
+## Working Login
+
+* create a skeleton `services/chat.ts` file and import it to login [b16bbae](https://github.com/lathonez/powwow-lessons/commit/b16bbae)
+* import and initialise `QuickBlox` [537cddb](https://github.com/lathonez/powwow-lessons/commit/537cddb)
+* create the `QuickBloxWrapper`, a basic login function, and join the dots to test [f0c1880](https://github.com/lathonez/powwow-lessons/commit/f0c1880)
+* add `errorHandler` [2fafa75](https://github.com/lathonez/powwow-lessons/commit/2fafa75)
+* create a skeleton `services/utils.ts` file and import it to login [ddd7880](https://github.com/lathonez/powwow-lessons/commit/ddd7880)
+* add `alerter` and `loadingSpinner` to utils service, plumb loading spinner into login [01a162c](https://github.com/lathonez/powwow-lessons/commit/01a162c)
+* process login result [7c5c934](https://github.com/lathonez/powwow-lessons/commit/7c5c934)
