@@ -14,7 +14,7 @@ ionic 2 chat app
 * [Upload project](#upload-the-project)
 * [Requirements Capture](#requirements-capture)
 * [Add login page (non functioning)](#add-login-page)
-* [Diff](https://github.com/lathonez/powwow-lessons/compare/v0.1...v1.0)
+* [Diff](https://github.com/lathonez/powwow/compare/lesson-one...lesson-two)
 
 ## Sublime Intro
 
