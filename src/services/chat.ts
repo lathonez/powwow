@@ -39,7 +39,7 @@ export class ChatService {
     self.QB.init(self.auth.id, self.auth.key, self.auth.secret, self.config);
   }
 
-  quickBloxWrapper(api, func, options): Promise<any> {
+  quickBloxWrapper(func, options): Promise<any> {
 
     // wrap any QuickBlox async function (taking a callback) to return a promise
     return new Promise(function(resolve, reject) {
@@ -56,35 +56,59 @@ export class ChatService {
         }
       };
 
-      // some QuickBlox functions have no namespace (createSession)
-      // but most are prefixed by the API section (chat.send, users.get)
-      if (api === 'main') {
-        // invoke the QuickBlox function, with the options passed in, and our callback above
-        self.QB[func](options, cb);
-      } else {
-        // ditto ^^, but for the provided namespace
-        self.QB[api][func](options, cb);
+      // expand the funciton name into an array of namespaces ('chat.dialog.list' => ['chat','dialog','list'])
+      func = func.split('.');
+
+      switch (func.length) {
+        case 1:
+          self.QB[func[0]](options, cb);
+          break;
+        case 2:
+          self.QB[func[0]][func[1]](options, cb);
+          break;
+        case 3:
+          self.QB[func[0]][func[1]][func[2]](options, cb);
+          break;
       }
 
       // when our callback is executed by QuickBlox, our promise will be resolved or rejected accordingly
     });
   }
 
+  getDialog(user_id) {
+    // lookup a dialog id from a user_id
+    // get all dialogs
+    return self.quickBloxWrapper('chat.dialog.list', null)
+      .then(dialogs => dialogs.items.find(dialog => dialog.occupants_ids.includes(user_id)))
+  }
+
   getUsers() {
     // show all the users (apart from the current logged in user)!
-    return this.users.filter((user) => user.id !== self.currentUserId);
+    return this.users.filter(user => user.id !== self.currentUserId);
   }
 
   getUsersFromServer(ret) {
 
     // get _all_ the users!
-    return self.quickBloxWrapper('users', 'get', [{per_page: 100}])
+    return self.quickBloxWrapper('users.get', [{per_page: 100}])
 
       // set our users array to the returned users from the server
-      .then((users) => {
-        self.users = users.items.map((item) => item.user);
+      .then(users => {
+        self.users = users.items.map(item => item.user);
         return ret;
       });
+  }
+
+  history(user_id) {
+
+    let options: any = {sort_desc: 'date_sent', limit: 100, skip: 0};
+    // first we need to get the dialog ID for this user
+    self.getDialog(user_id)
+      .then(dialog => {
+        options.chat_dialog_id = dialog._id;
+        return self.quickBloxWrapper('chat.message.list', options);
+      })
+      .then(res => console.log(res));
   }
 
   connect(session, password) {
@@ -96,16 +120,16 @@ export class ChatService {
     self.setupListeners();
 
     // connect to the server with this user
-    return self.quickBloxWrapper('chat', 'connect', {userId: session.user_id, password: password});
+    return self.quickBloxWrapper('chat.connect', {userId: session.user_id, password: password});
   }
 
   login(username, password) {
 
     // first we need to create a session with quickBlox for this user (first step auth)
-    return self.quickBloxWrapper('main', 'createSession', {login: username, password: password})
+    return self.quickBloxWrapper('createSession', {login: username, password: password})
 
       // open a connection with this user
-      .then((result) => self.connect(result, password))
+      .then(result => self.connect(result, password))
 
       // get the users associated with the account
       .then(self.getUsersFromServer)
@@ -129,10 +153,10 @@ export class ChatService {
     }
 
     // to create the session (we've no user yet), we just pass the username
-    return self.quickBloxWrapper('main', 'createSession', {login: username})
+    return self.quickBloxWrapper('createSession', {login: username})
 
       // after our session is created, we create (register) the user with the options above
-      .then(((result) => self.quickBloxWrapper('users', 'create', options)))
+      .then(result => self.quickBloxWrapper('users.create', options))
 
        // catch any errors and format them nicely for the user
       .catch(self.errorHandler);

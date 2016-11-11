@@ -32,11 +32,7 @@ export class LoginPage {
     this.chat.login(this.username, this.password)
 
       // store the result from login so we can access it later
-      .then((result) => {
-        console.log('HERE');
-        console.log(result);
-        loginResult = result;
-      })
+      .then(result => loginResult = result)
 
       // hide our loading spinner as we can no hand back to the user
       .then(() => this.utils.hideLoadingSpinner())
