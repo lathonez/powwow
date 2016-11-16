@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import * as moment from 'moment';
 
 let self: ChatService;
 
@@ -37,6 +38,7 @@ export class ChatService {
     self = this;
     // qb initialiser - does nothing with network
     self.QB.init(self.auth.id, self.auth.key, self.auth.secret, self.config);
+    window['scroll-into-view'] = require('dom-scroll-into-view');
   }
 
   quickBloxWrapper(func, options): Promise<any> {
@@ -75,6 +77,29 @@ export class ChatService {
     });
   }
 
+  formatHistory(dialog, user) {
+
+    let history = [];
+    let lastDay = '';
+
+    dialog.items.reverse().forEach(item => {
+
+      let day = moment(item.created_at).format('MMMM Do');
+      let time = moment(item.created_at).format('h:mm:ss a');
+      let message = item.message;
+      let who = user.id === item.recipient_id ? 'me' : user.login;
+
+      if (day !== lastDay) {
+        history.push(day);
+        lastDay = day;
+      }
+
+      history.push(time + ' - ' + who + ' : ' + message);
+    });
+
+    return history;
+  }
+
   getDialog(user_id) {
     // lookup a dialog id from a user_id
     // get all dialogs
@@ -99,16 +124,16 @@ export class ChatService {
       });
   }
 
-  history(user_id) {
+  history(user) {
 
     let options: any = {sort_desc: 'date_sent', limit: 100, skip: 0};
     // first we need to get the dialog ID for this user
-    self.getDialog(user_id)
+    return self.getDialog(user.id)
       .then(dialog => {
         options.chat_dialog_id = dialog._id;
         return self.quickBloxWrapper('chat.message.list', options);
       })
-      .then(res => console.log(res));
+      .then((dialog) => this.formatHistory(dialog, user));
   }
 
   connect(session, password) {

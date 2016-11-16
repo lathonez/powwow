@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { App, NavController, NavParams } from 'ionic-angular';
 import { ChatService } from '../../services/chat';
+import * as moment from 'moment';
 
 let self: ChatPage;
 
@@ -31,7 +32,8 @@ export class ChatPage {
     // the user that we're chatting to is passed through in the NavParams, store it
     self.user = navParams.data.user;
 
-    self.chat.history(self.user.id);
+    self.chat.history(self.user)
+      .then(history => this.conversation = history);
 
     // make sure we get incoming chat notifications
     self.messageSubscription = self.chat.messageEmitter.subscribe(self.receiveMessage);
@@ -49,7 +51,11 @@ export class ChatPage {
     }
 
     // add the new message to our conversation array
-    self.conversation.push(self.user.login + ': ' + data.message.body);
+    self.conversation.push(moment().format('h:mm:ss a') + ' - ' + self.user.login + ': ' + data.message.body);
+  }
+
+  scroll() {
+    // require('dom-scroll-into-view')($('#scroll-marker')[0], $('.convo .scroll-content')[0]);
   }
 
   sendMessage() {
@@ -69,6 +75,6 @@ export class ChatPage {
     self.chat.send(message, self.user.id);
 
     // add the message to our conversation so we can see it in the chat window
-    self.conversation.push('me: ' + message);
+    self.conversation.push(moment().format('h:mm:ss a') + ' - me: ' + message);
   }
 }

@@ -1,12 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Chat with {{user.login}}</ion-title>
+    <ion-title>Chat with {{user.full_name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="chat">
   <ion-scroll scrollY="true" class="convo">
-  <p *ngFor="let line of conversation">{{line}}</p>
+    <p *ngFor="let line of conversation">{{line}}</p>
+    <span id="scroll-marker"></span>
   </ion-scroll>
   <ion-list>
     <form (ngSubmit)="sendMessage()">
