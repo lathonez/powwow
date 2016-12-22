@@ -84,6 +84,30 @@ export class ChatService {
       .catch(self.errorHandler);
   }
 
+  register(username, password, name, email) {
+
+    // create registration options for our mandatory params
+    let options: any = {
+      login: username,
+      password: password,
+      full_name: name
+    };
+
+    // add email if provided
+    if (email) {
+      options.email = email;
+    }
+
+    // to create the session (we've no user yet), we just pass the username
+    return self.quickBloxWrapper('createSession', {login: username})
+
+      // after our session is created, we create (register) the user with the options above
+      .then(result => self.quickBloxWrapper('users.create', options))
+
+       // catch any errors and format them nicely for the user
+      .catch(self.errorHandler);
+  }
+
   errorHandler(error) {
     // helper function to format error messages received from the server nicely for the user
     let message;

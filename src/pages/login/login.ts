@@ -48,6 +48,7 @@ export class LoginPage {
   }
 
   register() {
-    console.log('REGISTER');
+    // switch to the register page
+    this.nav.push(RegisterPage);
   }
 }
