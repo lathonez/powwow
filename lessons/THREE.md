@@ -62,10 +62,10 @@
 
 * Fill out the inputs (Label / ngModel / name / type):
   - Name / name / name / text
-- Username / username / username / text
-- Password / password / password / password
-- Password (Confirm) / passwordConfirm / passwordConfirm / password
-- Email / email / email / email
+  - Username / username / username / text
+  - Password / password / password / password
+  - Password (Confirm) / passwordConfirm / passwordConfirm / password
+  - Email / email / email / email
 
 * Add form variables:
 
