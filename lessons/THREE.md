@@ -61,7 +61,7 @@
 ```
 
 * Fill out the inputs (Label / ngModel / name / type):
-- Name / name / name / text
+  - Name / name / name / text
 - Username / username / username / text
 - Password / password / password / password
 - Password (Confirm) / passwordConfirm / passwordConfirm / password
