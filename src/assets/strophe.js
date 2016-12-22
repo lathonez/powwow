@@ -1,1 +1,0 @@
-/home/lathonez/code/powwow/node_modules/strophe.js/strophe.js
