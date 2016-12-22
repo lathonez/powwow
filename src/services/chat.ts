@@ -39,7 +39,7 @@ export class ChatService {
     self.QB.init(self.auth.id, self.auth.key, self.auth.secret, self.config);
   }
 
-  quickBloxWrapper(api, func, options): Promise<any> {
+  quickBloxWrapper(func, options): Promise<any> {
 
     // wrap any QuickBlox async function (taking a callback) to return a promise
     return new Promise(function(resolve, reject) {
@@ -56,14 +56,19 @@ export class ChatService {
         }
       };
 
-      // some QuickBlox functions have no namespace (createSession)
-      // but most are prefixed by the API section (chat.send, users.get)
-      if (api === 'main') {
-        // invoke the QuickBlox function, with the options passed in, and our callback above
-        self.QB[func](options, cb);
-      } else {
-        // ditto ^^, but for the provided namespace
-        self.QB[api][func](options, cb);
+      // expand the funciton name into an array of namespaces ('chat.dialog.list' => ['chat','dialog','list'])
+      func = func.split('.');
+
+      switch (func.length) {
+        case 1:
+          self.QB[func[0]](options, cb);
+          break;
+        case 2:
+          self.QB[func[0]][func[1]](options, cb);
+          break;
+        case 3:
+          self.QB[func[0]][func[1]][func[2]](options, cb);
+          break;
       }
 
       // when our callback is executed by QuickBlox, our promise will be resolved or rejected accordingly
