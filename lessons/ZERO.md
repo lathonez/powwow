@@ -35,7 +35,7 @@
 
 ## Typescript Basics
 
-* BINDING: Add a result variable to login.ts, set it to something in the constructor and display it in the html
+* **BINDING**: Add a result variable to login.ts, set it to something in the constructor and display it in the html
 
 **pages/login/login.html**:
 
@@ -53,7 +53,7 @@
     this.result = 'TEST';
 ```
 
-* FUNCTIONS: Set the result variable from a function in the constructor
+* **FUNCTIONS**: Set the result variable from a function in the constructor
 
 **pages/login/login.ts**:
 
@@ -67,7 +67,7 @@
   }
 ```
 
-* STRINGS: pass a variable into the function affecting the result
+* **STRINGS**: pass a variable into the function affecting the result
 
 **pages/login/login.ts**:
 
@@ -81,7 +81,7 @@
   }
 ```
 
-* NUMBERS: do some addition in the function
+* **NUMBERS**: do some addition in the function
 
 **pages/login/login.ts**:
 
@@ -95,7 +95,7 @@
   }
 ```
 
-* ARRAYS: play with array binding
+* **ARRAYS**: play with array binding
 
 **pages/login/login.ts**:
 
@@ -105,7 +105,7 @@
     this.result = myFirstArray[0] + ' ' + myFirstArray[2] + ' ' + myFirstArray[3];
 ```
 
-* OBJECTS
+* **OBJECTS**
 
 **pages/login/login.ts**:
 
@@ -120,7 +120,7 @@
     this.result = 'wheels: ' + car.wheels;
 ```
 
-* IF / LOGIC:
+* **IF / LOGIC**:
 
 **pages/login/login.ts**:
 
@@ -137,7 +137,7 @@
   }
 ```
 
-* HTML / bringing it all together:
+* **HTML** / bringing it all together:
 
 **pages/login/login.html**:
 
