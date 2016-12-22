@@ -34,3 +34,7 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 .io-config.json
+
+# ignore js assets copied from node modules in postinstall
+src/assets/jquery.min.js
+src/assets/strophe.js
