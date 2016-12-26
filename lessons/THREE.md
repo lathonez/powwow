@@ -1,7 +1,7 @@
 ## Lesson Objectives
 
 * [Working Registration](#working-registration)
-* [Diff](https://github.com/lathonez/powwow-lessons/compare/lesson-three...lesson-four)
+* [Diff](https://github.com/lathonez/powwow/compare/lesson-three...lesson-four)
 
 ## Working Registration
 
