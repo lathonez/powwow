@@ -1,7 +1,7 @@
 ## Lesson Objectives
 
 * [Working Registration](#working-registration)
-* [Diff](https://github.com/lathonez/powwow-lessons/compare/lesson-three...lesson-four)
+* [Diff](https://github.com/lathonez/powwow/compare/lesson-three...lesson-four)
 
 ## Working Registration
 
@@ -61,11 +61,11 @@
 ```
 
 * Fill out the inputs (Label / ngModel / name / type):
-⋅⋅* Name / name / name / text
-..* Username / username / username / text
-..* Password / password / password / password
-..* Password (Confirm) / passwordConfirm / passwordConfirm / password
-..* Email / email / email / email
+  - Name / name / name / text
+  - Username / username / username / text
+  - Password / password / password / password
+  - Password (Confirm) / passwordConfirm / passwordConfirm / password
+  - Email / email / email / email
 
 * Add form variables:
 
