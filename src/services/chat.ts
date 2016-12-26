@@ -75,11 +75,43 @@ export class ChatService {
     });
   }
 
+  getUsers() {
+    // show all the users (apart from the current logged in user)!
+    return this.users.filter(user => user.id !== self.currentUserId);
+  }
+
+  getUsersFromServer(ret) {
+
+    // get _all_ the users!
+    return self.quickBloxWrapper('users.get', [{per_page: 100}])
+
+      // set our users array to the returned users from the server
+      .then(users => {
+        self.users = users.items.map(item => item.user);
+        return ret;
+      });
+  }
+
+  connect(session, password) {
+
+    // store the current userId so we can use it to lookup who we are
+    self.currentUserId = session.user_id;
+
+    // connect to the server with this user
+    return self.quickBloxWrapper('chat.connect', {userId: session.user_id, password: password});
+  }
 
   login(username, password) {
 
     // first we need to create a session with quickBlox for this user (first step auth)
     return self.quickBloxWrapper('createSession', {login: username, password: password})
+
+      // open a connection with this user
+      .then(result => self.connect(result, password))
+
+      // get the users associated with the account
+      .then(self.getUsersFromServer)
+
       // catch any errors and format them nicely for the user
       .catch(self.errorHandler);
   }
