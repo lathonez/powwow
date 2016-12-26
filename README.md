@@ -7,3 +7,4 @@ Ionic 2 chat app with lesson plans
 # [Lesson Two](https://github.com/lathonez/powwow/blob/lesson-two/lessons/TWO.md)
 # [Lesson Three](https://github.com/lathonez/powwow/blob/lesson-three/lessons/THREE.md)
 # [Lesson Four](https://github.com/lathonez/powwow/blob/lesson-three/lessons/FOUR.md)
+# [Lesson Five](https://github.com/lathonez/powwow/blob/lesson-three/lessons/FIVE.md)
