@@ -4,13 +4,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="chat">
   <ion-scroll scrollY="true" class="convo">
+    <p *ngFor="let line of conversation">{{line}}</p>
   </ion-scroll>
   <ion-list>
     <form (ngSubmit)="sendMessage()">
       <ion-item>
-        <ion-input [(ngModel)]="line" name="line" type="text"></ion-input>
+        <ion-input [(ngModel)]="line" placeholder="Say something to {{user.login}}" name="line" type="text"></ion-input>
       </ion-item>
       <ion-item>
         <button ion-button icon-left block><ion-icon name="send"></ion-icon>Send</button>

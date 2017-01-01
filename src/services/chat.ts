@@ -97,6 +97,9 @@ export class ChatService {
     // store the current userId so we can use it to lookup who we are
     self.currentUserId = session.user_id;
 
+    // setup event listeners
+    self.setupListeners();
+
     // connect to the server with this user
     return self.quickBloxWrapper('chat.connect', {userId: session.user_id, password: password});
   }
@@ -153,6 +156,17 @@ export class ChatService {
 
     // message sending is fire and forget in QuickBlox (no async callback)
     return self.QB.chat.send(recipientId, msg);
+  }
+
+  setupListeners() {
+    // set up observables so we can receive inbound events (messages!) from the server
+
+    // message observable
+    self.QB.chat.onMessageListener = function(userId, message) {
+
+      // when we receive a message, our observable should emit the data
+      self.messageEmitter.emit({userId: userId, message: message});
+    };
   }
 
   errorHandler(error) {
