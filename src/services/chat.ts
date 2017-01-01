@@ -140,6 +140,21 @@ export class ChatService {
       .catch(self.errorHandler);
   }
 
+  send(message, recipientId) {
+    let msg = {
+      type: 'chat',
+      body: message,
+      extension: {
+        save_to_history: 1,
+      },
+      senderId: self.currentUserId,
+      markable: 1
+    };
+
+    // message sending is fire and forget in QuickBlox (no async callback)
+    return self.QB.chat.send(recipientId, msg);
+  }
+
   errorHandler(error) {
     // helper function to format error messages received from the server nicely for the user
     let message;
