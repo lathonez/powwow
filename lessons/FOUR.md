@@ -73,10 +73,12 @@
 
 **pages/contacts/contacts.ts**:
 
+```javascript
   startChat(user) {
     // open the chat page for the user we've clicked on
     this.nav.push(ChatPage, {user: user});
   }
+```
 
 * Add html to display contacts list:
 
