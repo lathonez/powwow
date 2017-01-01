@@ -8,6 +8,12 @@ import { UtilsService } from '../../services/utils';
 })
 export class RegisterPage {
 
+  username: string;
+  password: string;
+  passwordConfirm: string;
+  name: string;
+  email: string;
+
   constructor(
     public nav: NavController,
     public chat: ChatService,
