@@ -1,5 +1,5 @@
 {
-  "name": "powwow",
+  "name": "PoWWoW",
   "author": "Stephen Hazleton",
   "homepage": "https://github.com/lathonez/powwow",
   "private": true,
@@ -8,7 +8,8 @@
     "build": "ionic-app-scripts build",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "postinstall": "cp node_modules/jquery/dist/jquery.min.js node_modules/strophe.js/strophe.js src/assets"
+    "postinstall": "cp node_modules/jquery/dist/jquery.min.js node_modules/strophe.js/strophe.js src/assets",
+    "start": "ionic serve --all --port 8080 --consolelogs --nolivereload"
   },
   "dependencies": {
     "@angular/common": "2.2.1",
@@ -20,20 +21,23 @@
     "@angular/platform-browser": "2.2.1",
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/platform-server": "2.2.1",
-    "@ionic/storage": "1.1.6",
-    "dom-scroll-into-view": "^1.2.1",
-    "ionic-angular": "2.0.0-rc.4",
-    "ionic-native": "2.2.11",
+    "@ionic/storage": "1.1.7",
+    "dom-scroll-into-view": "1.2.1",
+    "ionic-angular": "2.0.0",
+    "ionic-native": "2.4.1",
     "ionicons": "3.0.0",
+    "moment": "2.16.0",
     "prettyjson": "1.1.3",
     "quickblox": "2.3.4",
     "rxjs": "5.0.0-beta.12",
-    "zone.js": "0.6.26"
+    "zone.js": "0.6.26",
+    "sw-toolbox": "3.4.0"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.47",
-    "@types/node": "^6.0.52",
-    "typescript": "2.0.9"
+    "@angular/compiler-cli": "2.2.1",
+    "@ionic/app-scripts": "1.0.0",
+    "@types/node": "7.0.4",
+    "typescript": "2.0.10"
   },
   "description": "powwow: An Ionic project",
   "cordovaPlugins": [
@@ -44,5 +48,11 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lathonez/powwow.git"
+  },
+  "license": "MIT",
+  "description": "PoWWow: An educational Ionic Chat Application"
 }
