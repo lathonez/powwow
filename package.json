@@ -9,7 +9,7 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "postinstall": "cp node_modules/jquery/dist/jquery.min.js node_modules/strophe.js/strophe.js src/assets",
-    "start": "ionic serve --all --port 8080 --livereload-port 8081"
+    "start": "ionic serve --all --port 8080 --consolelogs --nolivereload"
   },
   "dependencies": {
     "@angular/common": "2.2.1",
