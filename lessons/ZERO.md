@@ -1,5 +1,6 @@
 ## Lesson Objectives
 
+* [Project Intro](#project-intro)
 * [Cloud 9 Intro](#cloud-9-intro)
 * [Dev Tools Intro](#dev-tools-intro)
 * [Build Cycle Intro](#build-cycle-intro)
@@ -10,12 +11,10 @@
 
 * introduce other teachers
 * has anyone coded before?
-* what differences are there between scratch and coding (very similar, computers are stupid), lots of similar concepts as we will see
+* what differences are there between scratch and coding (very similar, computers are stupid)
 * this term working on a chat app using cutting edge professional development tools and technologies
 * we will work together to make the app, you will get an insight to what it feels like to be a software developer
 * don't worry if you don't understand something, this stuff is for professionals with years of training. no one expects you to get it first time, we will go slow and do everything together
-
-To start off, we're going to introduce you to the workspace and get our app up and running.
 
 ## Cloud 9 Intro
 
@@ -57,24 +56,20 @@ This is all the same as not clicking the green flag in scratch
 * App is made of three main file types: HTML, SCSS and Typescript
 * HTML: the template / building blocks for our content
 * SCSS: design tweaks to make our template look nice
-* Typescript: the "real" coding - provides content for our HTML / SCSS template, and provides functionality in the app (e.g. sending a message)
+* Typescript: the "real" coding - provides content for our HTML / SCSS template, and provides functionality in the app (e.g. sending a chat)
 
 Comparisons:
 
 * Scratch: Typescript is like the sprite scripts. HTML + SCSS are like the sprite costumes. Typescript fills our HTML & SCSS with content and provides it with functionality, as the sprite scripts in scratch make the sprite move around the screen.
 * School Uniform: The type of uniform (shirt / jumper / trousers / skirt) is the HTML. The colour / style (blue / green / stripey) is the SCSS. The student inside the uniform running around the school is the Typescript
 
-Go through the files:
-
-Boilerplate:
+**Boilerplate**:
 
 Anyone know what boilerplate means?
 
 Boilerplate is a term web developers have started using over the last few years. What it basically means is a whole bunch of code that we have to use to make our apps work, but we don't usually change it very much.
 
-// cant think of a good comparison for this atm?
-
-Don't worry too much about these files - they are all boilerplate and we won't be changing them - but it is useful to know what they are for.
+No need to worry too much about these files, this is just for background info.
 
 * index.html: just loads a whole bunch of typescript and librarires, main.ts is the entry point to our app.
 * declarations.d.ts: define TYPES for our typescript - more on types later
@@ -89,20 +84,16 @@ Don't worry too much about these files - they are all boilerplate and we won't b
 * strophe.js / jquery.min.js: old school web libraries
 * theme/variables.scss: SCSS variable definitions
 
-Don't worry about information overload.
-
-The files we care about are only in pages / services.
+The files we will work on are in the pages and services folder.
 
 * Pages: each page in our app has a folder.
 * Services: services are for Typescript code used by multiple pages.
 
-## Coding Into
+## Coding Intro
 
-Each of our pages has:
+Each of our pages has Typescript, HTML and SCSS
 
-Each has Typescript, HTML and SCSS
-
-Login.html:
+**Open login.html:**
 
 * Out in 1993, markup language (format text)
 * Explain tags
@@ -124,16 +115,17 @@ Login.html:
 
 Add some Typescript to make our button do something!
 
-Login.ts:
+**Open login.ts:**
 
+* Who can name some programming languages?
 * Javascript? With Types
 * What are types?
-* Who can name some programming languages?
-* Why typescript?
+* Why typescript / javascript?
 * Explain imports
 * Public vs Private
 * Constructor
 * This
+* funtion
 
 **pages/login/login.ts**:
 
@@ -173,7 +165,22 @@ Login.ts:
   <button ion-button (click)="plus()">{{counter}}
 ```
 
-* We should add a background image
+Add some SCSS to make our page look cool
+
+**Open login.scss**
+
+* Find an image you want and get the URL.
+* Add the URL as a CSS rule
+
+**pages/login/login.scss**:
+
+```css
+.login {
+  background: url('http://tinyurl.com/op6aznv')
+}
+```
+
+* nothing happened..
 * Add a class to the page content
 
 **pages/login/login.html**:
@@ -182,19 +189,10 @@ Login.ts:
   <ion-content class="login">
 ```
 
-* Find an image you want and get the URL.
-* Add the URL as a CSS rule
-
-**pages/login/login.scsss**:
-
-```css
-.login {
-  background: url('http://tinyurl.com/op6aznv')
-}
-```
-
 * How does it look?
 * Add more rules to make it look good
+
+**pages/login/login.scss**:
 
 ```css
   background-size: contain;
@@ -207,7 +205,7 @@ Login.ts:
 * How to use Chrome developer tools to emulate a mobile device and inspect / debug a webpage
 * Sun Beats Rain
 * The structure of a webapp
-* The basics of HTML, Typescript and SCSS
+* The basics of coding HTML, Typescript and SCSS
 
 ## Ionic View
 
