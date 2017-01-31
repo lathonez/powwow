@@ -1,0 +1,1 @@
+{"filter":false,"title":"Serve - Idle","tooltip":"Serve - Idle","undoManager":{"mark":-1,"position":-1,"stack":[]},"output":{"id":"output503490","width":1674,"height":236,"scrollTop":730,"config":{"command":"npm start","name":"Serve","runner":"Shell command","toolbar":true}},"timestamp":1485753874087,"hash":"da39a3ee5e6b4b0d3255bfef95601890afd80709"}

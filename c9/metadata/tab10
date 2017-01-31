@@ -1,0 +1,1 @@
+{"filter":false,"title":"Upload - Idle","tooltip":"Upload - Idle","undoManager":{"mark":-1,"position":-1,"stack":[]},"output":{"id":"output949571","width":1674,"height":345,"scrollTop":-1,"config":{"command":"ionic upload","name":"Upload","runner":"Shell command","toolbar":true}},"timestamp":1485754077282,"hash":"da39a3ee5e6b4b0d3255bfef95601890afd80709"}
