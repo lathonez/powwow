@@ -53,6 +53,8 @@ This is all the same as not clicking the green flag in scratch
 
 ## App Intro
 
+Web app vs a real app
+
 * App is made of three main file types: HTML, SCSS and Typescript
 * HTML: the template / building blocks for our content
 * SCSS: design tweaks to make our template look nice
@@ -65,142 +67,151 @@ Comparisons:
 
 Go through the files:
 
+Boilerplate:
 
+Anyone know what boilerplate means?
 
-## Ionic View
+Boilerplate is a term web developers have started using over the last few years. What it basically means is a whole bunch of code that we have to use to make our apps work, but we don't usually change it very much.
 
-* Tell students to install Ionic View app on their device in time for next lesson and bring a device in next time (not essential)
-* Install ionic view app from app store
+// cant think of a good comparison for this atm?
 
-## Typescript Basics
+Don't worry too much about these files - they are all boilerplate and we won't be changing them - but it is useful to know what they are for.
 
-* **BINDING**: Add a result variable to login.ts, set it to something in the constructor and display it in the html
+* index.html: just loads a whole bunch of typescript and librarires, main.ts is the entry point to our app.
+* declarations.d.ts: define TYPES for our typescript - more on types later
+* manfiest.json: config file for our framework
+* service-worker.js: library - allows the app to work offline
+* app: main entry point for our app
+* app.component.ts: simple component to contain our app
+* app.module.ts: declares all the COMPONENTS and SERVICES in our app
+* app.scss: empty SCSS file for global app level
+* main.ts: entry point to our app
+* assets: in here are some images (favicon and an avatar icon). Who knows what we use these for?
+* strophe.js / jquery.min.js: old school web libraries
+* theme/variables.scss: SCSS variable definitions
 
-**pages/login/login.html**:
+Don't worry about information overload.
 
-```html
-<ion-content>{{result}}</ion-content>
-```
+App files:
 
-**pages/login/login.ts**:
+Only in pages / services.
 
-```javascript
-  public result;
+* Pages: each page in our app has a folder.
+* Services: services are for Typescript code used by multiple pages.
 
-...
+Pages:
 
-    this.result = 'TEST';
-```
+Each has Typescript, HTML and SCSS
 
-* **FUNCTIONS**: Set the result variable from a function in the constructor
+Login.html**:
 
-**pages/login/login.ts**:
-
-```javascript
-  this.result = this.myFirstFunction();
-
-...
-
-  public myFirstFunction() {
-    return 'FUNCTION RESULT';
-  }
-```
-
-* **STRINGS**: pass a variable into the function affecting the result
-
-**pages/login/login.ts**:
-
-```javascript
-  this.result = this.appendText('SOME TEXT');
-
-...
-
-  public appendText(input) {
-    return 'FUNCTION RESULT ' + input;
-  }
-```
-
-* **NUMBERS**: do some addition in the function
-
-**pages/login/login.ts**:
-
-```javascript
-  this.result = this.addNumbers(6, 6);
-
-...
-
-  public addNumbers(numberOne, numberTwo) {
-    return numberOne + numberTwo;
-  }
-```
-
-* **ARRAYS**: play with array binding
-
-**pages/login/login.ts**:
-
-```javascript
-    let myFirstArray = ['one', 'two', 'three'];
-    myFirstArray.push('four');
-    this.result = myFirstArray[0] + ' ' + myFirstArray[2] + ' ' + myFirstArray[3];
-```
-
-* **OBJECTS**
-
-**pages/login/login.ts**:
-
-```javascript
-    this.car: any = {
-      wheels: 4,
-      doors: 2,
-      fuel: 'petrol',
-      transmission: 'manual',
-      running: false
-    };
-    this.result = 'wheels: ' + car.wheels;
-```
-
-* **IF / LOGIC**:
-
-**pages/login/login.ts**:
-
-```javascript
-
-    this.result = this.printCarRunning();
-
-  public printCarRunning() {
-    if (car.running) {
-      return 'CAR IS RUNNING';
-    } else {
-      return 'CAR IS NOT RUNNING';
-    }
-  }
-```
-
-* **HTML** / bringing it all together:
+* Out in 1993, markup language (format text)
+* Explain tags
+* Header
+* `<ion-content></ion-content>`
+* Who can update content? between tags and SBR
+* Who can make a new line?
+* Whitespace and indentation.
+* Who knows any HTML tags?
+* Add a button:
 
 **pages/login/login.html**:
 
 ```html
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <button ion-button block type="button" (click)="toggleCarRunning()">
-        Toggle Car Running
-      </button>
-    </ion-item>
-  </ion-list>
-  {{printCarRunning()}}
+  <button ion-button>My Button</button>
 </ion-content>
 ```
+
+Add some Typescript to make our button do something!
+
+Login.ts:
+
+* Javascript? With Types
+* What are types?
+* Who can name some programming languages?
+* Why typescript?
+* Explain imports
+* Public vs Private
+* Constructor
+* This
 
 **pages/login/login.ts**:
 
 ```javascript
-  public toggleCarRunning() {
-    if (this.car.running) {
-      this.car.running = false;
-    } else {
-      this.car.running = true;
-    }
+  public counter = 0;
+  ...
+  public plus() {
+    this.counter = this.counter + 1;
   }
 ```
+
+* Now what happens?
+* Make the button click the counter:
+
+**pages/login/login.html**:
+
+```html
+  <button ion-button (click)="plus()">
+```
+
+* Still nothing..
+* Add some log lines, observe in the console:
+
+**pages/login/login.ts**:
+
+```javascript
+  public plus() {
+    console.log('counter before ' + this.counter);
+    this.counter = this.counter + 1;
+    console.log('counter after ' + this.counter);
+  }
+```
+
+**pages/login/login.html**:
+
+```html
+  <button ion-button (click)="plus()">{{counter}}
+```
+
+* We should add a background image
+* Add a class to the page content
+
+**pages/login/login.html**:
+
+```html
+  <ion-content class="login">
+```
+
+* Find an image you want and get the URL.
+* Add the URL as a CSS rule
+
+**pages/login/login.scsss**:
+
+```css
+.login {
+  background: url('http://tinyurl.com/op6aznv')
+}
+```
+
+* How does it look?
+* Add more rules to make it look good
+
+```css
+  background-size: contain;
+  background-repeat: no-repeat;
+```
+
+## Ionic View
+
+* Tell students to install Ionic View app on their device in time for next lesson and bring a device in next time (not essential)
+* Install ionic view app from app store
+* Download your version of powwow
+
+## What have we covered?
+
+* How to use C9 cloud workspace
+* How to use Chrome developer tools to emulate a mobile device and inspect / debug a webpage
+* Sun Beats Rain
+* The structure of a webapp
+* The basics of HTML, Typescript and SCSS
