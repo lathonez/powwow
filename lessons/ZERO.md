@@ -3,7 +3,8 @@
 * [Cloud 9 Intro](#cloud-9-intro)
 * [Dev Tools Intro](#dev-tools-intro)
 * [Build Cycle Intro](#build-cycle-intro)
-* [App and Coding Intro](#app-intro)
+* [App Layout](#app-layout)
+* [Coding intro](#coding-intro)
 
 ## Project Intro
 
@@ -52,8 +53,7 @@ This is all the same as not clicking the green flag in scratch
 
 ## App Intro
 
-Web app vs a real app
-
+* Web app vs a real app
 * App is made of three main file types: HTML, SCSS and Typescript
 * HTML: the template / building blocks for our content
 * SCSS: design tweaks to make our template look nice
@@ -91,14 +91,14 @@ Don't worry too much about these files - they are all boilerplate and we won't b
 
 Don't worry about information overload.
 
-App files:
-
-Only in pages / services.
+The files we care about are only in pages / services.
 
 * Pages: each page in our app has a folder.
 * Services: services are for Typescript code used by multiple pages.
 
-Pages:
+## Coding Into
+
+Each of our pages has:
 
 Each has Typescript, HTML and SCSS
 
