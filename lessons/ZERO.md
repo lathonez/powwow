@@ -202,12 +202,6 @@ Login.ts:
   background-repeat: no-repeat;
 ```
 
-## Ionic View
-
-* Tell students to install Ionic View app on their device in time for next lesson and bring a device in next time (not essential)
-* Install ionic view app from app store
-* Download your version of powwow
-
 ## What have we covered?
 
 * How to use C9 cloud workspace
@@ -215,3 +209,9 @@ Login.ts:
 * Sun Beats Rain
 * The structure of a webapp
 * The basics of HTML, Typescript and SCSS
+
+## Ionic View
+
+* Tell students to install Ionic View app on their device in time for next lesson and bring a device in next time (not essential)
+* Install ionic view app from app store
+* Download your version of powwow
