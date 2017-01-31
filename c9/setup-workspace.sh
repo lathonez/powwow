@@ -10,12 +10,12 @@ echo "installing node dependencies, go make a cup of tea.."
 cd ~/workspace
 npm install -g cordova@6.0.x ionic && npm install
 
+echo "logging into ionic.."
+mkdir -p ~/.ionic
+cp c9/ionic/* ~/.ionic
+
 echo "switching to lesson-one.."
 git checkout lesson-one
-
-echo "copying global ionic.config"
-mkdir -p ~/.ionic
-cp c9/ionic.config ~/.ionic
 
 echo "workspace setup complete.." 
 echo "Don't forget to do the remaining manual tasks (README.md)"
