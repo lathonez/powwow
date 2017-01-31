@@ -176,7 +176,7 @@ Add some SCSS to make our page look cool
 
 ```css
 .login {
-  background: url('http://tinyurl.com/op6aznv')
+  background: url('http://tinyurl.com/op6aznv');
 }
 ```
 
