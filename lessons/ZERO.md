@@ -1,10 +1,9 @@
 ## Lesson Objectives
 
-* [Cloud 9 Intro / App Layout](#cloud-9-intro)
-
-* [Run the project](#run-the-project)
+* [Cloud 9 Intro](#cloud-9-intro)
 * [Dev Tools Intro](#dev-tools-intro)
-* [Typescript Basics](#typescript-basics)
+* [Build Cycle Intro](#build-cycle-intro)
+* [App and Coding Intro](#app-intro)
 
 ## Project Intro
 
@@ -19,7 +18,7 @@ To start off, we're going to introduce you to the workspace and get our app up a
 
 ## Cloud 9 Intro
 
-* what is the cloud anyway?
+* what is the cloud anyway? What's a server? What's a client?
 * layout: file tree, file workspace (like scripts in scratch), runners (like green flag in scratch), DO NOT PUSH RUN AT THE TOP
 * run the serve runner (press green flag..)
 * preview in new tab (and close the preview workspace - not enough space to work comfortably)
@@ -103,7 +102,7 @@ Pages:
 
 Each has Typescript, HTML and SCSS
 
-Login.html**:
+Login.html:
 
 * Out in 1993, markup language (format text)
 * Explain tags
