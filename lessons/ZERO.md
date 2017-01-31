@@ -1,37 +1,32 @@
 ## Lesson Objectives
 
-* [Sublime Intro / App Layout](#sublime-intro)
-* [Command line Intro](#command-line-intro)
+* [Cloud 9 Intro / App Layout](#cloud-9-intro)
+
 * [Run the project](#run-the-project)
 * [Dev Tools Intro](#dev-tools-intro)
 * [Typescript Basics](#typescript-basics)
 
-## Sublime Intro
+## Cloud 9 Intro
 
-* workspaces
-* app layout (boilerplate, app.ts, theme, home page)
-* red underlines
-
-## Command Line Intro
-
-* just need basic navigation
-* show some commands / cool stuff but we wont be using anything
-
-## Run the project
-
-* `ionic serve`
-* change some text on home page (observe auto-refresh)
-* kill the server (observe server being dead)
-* show an error compiling
+* what is the cloud anyway?
+* layout: file tree, file workspace (like scripts in scratch), runners (like green flag in scratch), DO NOT PUSH RUN AT THE TOP
+* run the serve runner (press green flag..)
+* preview in new tab (and close the preview workspace - not enough space to work comfortably)
+* app is running YAY
 
 ## Dev Tools Intro
 
-* open dev tools
+* open dev tools (via the menu)
 * different workspaces
 * device emulator
 * inspect html
 * console.log (in console)
 * console.log (in home page)
+
+## Ionic View
+
+* Tell students to install Ionic View app on their device in time for next lesson and bring a device in next time (not essential)
+* Install ionic view app from app store
 
 ## Typescript Basics
 
