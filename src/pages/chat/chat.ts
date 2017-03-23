@@ -29,6 +29,10 @@ export class ChatPage {
     // the user that we're chatting to is passed through in the NavParams, store it
     self.user = navParams.data.user;
 
+    // get chat history from the server and set our conversation as it on startup
+    self.chat.history(self.user)
+      .then(history => this.conversation = history);
+
     // make sure we get incoming chat notifications
     self.messageSubscription = self.chat.messageEmitter.subscribe(self.receiveMessage);
   }
