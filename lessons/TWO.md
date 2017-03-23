@@ -13,7 +13,7 @@
   login(username, password) {
 
     // first we need to create a session with quickBlox for this user (first step auth)
-    return self.quickBloxWrapper('main', 'createSession', {login: username, password: password});
+    return self.quickBloxWrapper('createSession', {login: username, password: password});
   }
 ```
 
