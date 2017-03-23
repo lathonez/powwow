@@ -28,7 +28,7 @@
   getUsersFromServer(ret) {
 
     // get _all_ the users!
-    return self.quickBloxWrapper('users.get', [{per_page: 100}])
+    return self.quickBloxWrapper('users.get', {per_page: 100})
 
       // set our users array to the returned users from the server
       .then(users => {
