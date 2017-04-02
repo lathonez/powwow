@@ -101,5 +101,12 @@ Here we can see live examples of the buttons and the assicoiated code. Ask the s
 
 The students now have the skills they need to spend some of their own time customising the app!
 
+## Before Theme Applied (Ionic Standard)
 
+![Before Theme Applied](https://github.com/lathonez/powwow/blob/lesson-eight/lessons/screens/8-theme-before.png "Before Theme Applied")
+
+
+## After Theme Applied (WhatsApp!)
+
+![After Theme Applied](https://github.com/lathonez/powwow/blob/lesson-eight/lessons/screens/8-theme-after.png "After Theme Applied")
 
