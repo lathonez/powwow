@@ -145,7 +145,7 @@ When `quickBloxWrapper` receives an error from the server, it will `reject` it's
 We have a pre-built error handler in `ChatService.ts`, called `errorHandler` Go over the code with the students, it uses a `switch` statement which they haven't seen before. Explain that it's just like a bunch of `if then` statements, you could write it out on the board as if statemenmts to explain.
 
 The error handler looks for error codes it knows about from the chat server, and returns a message that is user friendly.
- 
+
 Just as we used `.them` chains to wait for our `promise` to `fulfil` previously, we can use `.catch` chains to handle an error, if we are expecting that our promise might `reject`. Below, we catch any error inside the `login` function, and return a user friendly error message to the calling code.
 
 **services/chat.ts**:
@@ -185,7 +185,7 @@ So here we a use a simple `if else` statement, many of the students will be fami
 
 ## Nav Stack
 
-This is a good time to explain how a stack works. We push a page onto the stack, and pop it off the top of the stack to move backwards (handled by the framework when we click the back button or swipe back - we don't need to code this). The stack keeps track of what pages we've navigated to in the app so far. 
+This is a good time to explain how a stack works. We push a page onto the stack, and pop it off the top of the stack to move backwards (handled by the framework when we click the back button or swipe back - we don't need to code this). The stack keeps track of what pages we've navigated to in the app so far.
 
 The stack is really easy to demonstrate using anything that can be stacked up (post-its)!
 
@@ -197,12 +197,12 @@ Next time we're going to make a start on our user registration page.
 
 ### Loading Spinner
 
-![Loading Spinner](https://github.com/lathonez/powwow/blob/lesson-two/lessons/screens/2-login-spinner.png "Loading Spinner")
+![Loading Spinner](https://github.com/lathonez/powwow/blob/lesson-two/lessons/screens/2-login-spinner.PNG "Loading Spinner")
 
 ### Alert Box
 
-![Alert Box](https://github.com/lathonez/powwow/blob/lesson-two/lessons/screens/2-login-alert.png "Alert Box")
+![Alert Box](https://github.com/lathonez/powwow/blob/lesson-two/lessons/screens/2-login-alert.PNG "Alert Box")
 
 ### Contacts Page
 
-![Contacts Page](https://github.com/lathonez/powwow/blob/lesson-two/lessons/screens/2-login-after.png "Contacs Page")
+![Contacts Page](https://github.com/lathonez/powwow/blob/lesson-two/lessons/screens/2-login-after.PNG "Contacs Page")
