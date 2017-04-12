@@ -4,6 +4,8 @@
 * [Add login form](#add-login-form)
 * [Add login javascript functions](#add-login-javascript-functions)
 * [Diff](https://github.com/lathonez/powwow/compare/lesson-one...lesson-two)
+* [Next Lesson](next-lesson)
+* [Screenshots](screenshots)
 
 ## New concepts being addressed
 
@@ -142,3 +144,13 @@ Test the code - there should be no more errors now, and we should have the `user
 ## Next Lesson
 
 The next lesson is finishing the login form so we can login to the server and see it's response. If we get a successful login we will switch to our contacts list. If we fail to login, we will show the error nicely to the user. What should we do while we are waiting for the server to respond to us (loading spinner!)
+
+## Screenshots
+
+### Before Login HTML Changes
+
+![Before Login HTML](https://github.com/lathonez/powwow/blob/lesson-one/lessons/screens/1-login-before.PNG "Before Login HTML")
+
+### After Login HTML Changes
+
+![After Login HTML](https://github.com/lathonez/powwow/blob/lesson-one/lessons/screens/1-login-after.PNG "After Login HTML")
