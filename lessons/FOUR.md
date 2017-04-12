@@ -60,7 +60,7 @@ We covered arrays in the intro, and have used them a couple of times since then 
 From:
 
 ```json
-users: [
+users: {
   items: [
     {
       user: userOne,
@@ -73,15 +73,15 @@ users: [
        user: userThree,
     }
   ]
-]
+}
 ```
 
 to:
 
 ```json
-users: [
+users: {
   items: [userOne, userTwo, userThree]
-]
+}
 ```
 
 **Variable Passthrough**
