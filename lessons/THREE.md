@@ -203,7 +203,7 @@ Next time we're going to be working on the contact list
 
 ### Initial Register Page
 
-![Initial Reg Page](https://github.com/lathonez/powwow/blob/lesson-three/lessons/screens/3-register-spinner.PNG "Initial Reg Page")
+![Initial Reg Page](https://github.com/lathonez/powwow/blob/lesson-three/lessons/screens/3-register-before.PNG "Initial Reg Page")
 
 ### Loading Spinner
 
