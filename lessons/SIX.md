@@ -158,4 +158,4 @@ Next time we're going to implement chat history
 
 ### Chat Page
 
-![Chat Page](https://github.com/lathonez/powwow/blob/lesson-five/lessons/screens/6-chat-after.PNG "Chat Page")
+![Chat Page](https://github.com/lathonez/powwow/blob/lesson-six/lessons/screens/6-chat-after.PNG "Chat Page")
